@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Fire -- Burn Up Inline CSS Styles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="inc/jquery/dist/jquery.min.js"></script>
+  <script src="inc/velocity/jquery.velocity.min.js"></script>
+  <script src="inc/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="inc/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/extra.css">
+  <!-- NodeWebkit -->
+  <script>
+    // Load Window
+      var gui = require('nw.gui') , win = gui.Window.get();
+      $(function(){
+          setTimeout(function() {
+             win.show();
+             win.focus();
+        }, 1000);
+      });
+      // Add Menu Bar
+      var nativeMenuBar = new gui.Menu({ type: "menubar" });
+      try {
+        nativeMenuBar.createMacBuiltin("CSS Fire");
+        win.menu = nativeMenuBar;
+      } catch (ex) {
+        console.log(ex.message);
+      }
+
+  </script>
+  <script src="inc/app.js" type="text/javascript" charset="utf-8"></script>
+   <script src="inc/dropFile.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+  <div class="row">
+    <div class="container">
+      <div class="col-md-12">
+      <div class="cssFire2_div">
+        <i class="fa fa-cog cssFire4_i"  data-toggle="modal" data-target=".bs-example-modal-sm" id="reload" title="Settings"></i>
+        <i class="fa fa-refresh cssFire5_i" style="display: none" id="restart"></i>
+      </div>
+        <h2 class="logo"><img src="images/logo.png" class="cssFire6_img">CSS Fire <small class="cssFire7_small">Version 1.0</small></h2>
+        <div id="startBox">
+          <input type="text" class="form-control cssFire8_input" placeholder="Prepend (optional)" id="prependID">
+          <div class="cssFire9_div">
+                  <input type="radio" name="checkMinify" id="pretty" class="css-radio" checked="checked"><label for="pretty" class="css-radioLabel radGroup1 cssFire10_label">Pretty CSS</label>
+                  <input type="radio" name="checkMinify" id="minify" class="css-radio"><label for="minify" class="css-radioLabel radGroup1">Minify CSS</label>
+                  <input id="addTag" class="css-checkbox" type="checkbox">
+                  <label for="addTag" name="addTag" class="css-label">Add HTML Tags</label>
+                  <input id="addID" class="css-checkbox" type="checkbox">
+                  <label for="addID" name="addID" class="css-label">Add Parent ID</label>
+          </div>
+          <br clear="all">
+          <div id="editor"></div>
+          <button class="btn btn-primary btn-large btn-block cssFire11_button" id="cleanNow">
+            <i class="fa fa-check-square-o cssFire12_i"></i> Clean Up Inline CSS<small class="cssFire13_small">Burn The Fat Off Your HTML</small>
+          </button>
+        </div>
+        <br clear="all" style="">
+        <div style="margin-top: -35px">
+          <div id="cleanBox" style="clear: both;">
+        <br clear="all">
+          <img src="https://cdn1.iconfinder.com/data/icons/fatcow/32x32/html_valid.png" class="cssFire14_img">
+          <div id="newHTMLEditor"></div>
+          <img src="https://cdn3.iconfinder.com/data/icons/fatcow/32/css_valid.png" class="cssFire15_img">
+          <div id="cssClassesEditor"></div>
+          <div id="cssClassesPrepare" class="cssFire16_div"></div>
+          <!-- <button class="btn btn-default btn-large btn-block cssFire17_button" id="restart"><i class="fa fa-refresh cssFire18_i"></i> Restart The Furnace<small class="cssFire19_small">Throw More Wood in The Fire</small></button> -->
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <iframe src="dirty.html" id="iframe" style="display: none" ></iframe>
+    <object type="application/x-shockwave-flash" data="inc/fire.swf" id="fire"  width="600" height="600" > 
+        <param name="movie" value="inc/fire.swf" />
+        <param name="quality" value="high" />
+        <param name="wmode" value="transparent" />
+    </object>
+  </div>
+
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal"  style="font-size: 25px; padding: 10px; padding-top: 5px;"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     <div style="padding: 10px 30px;">
+       <h1 class="logo"><img src="images/logo.png" class="cssFire6_img">.cssFire { Settings }</h1>
+      <p>Set the default theme for the HTML / CSS editor.</p>
+      <hr>
+      <strong>HTML Editor Theme</strong>
+
+      <select name="aceTheme" id="aceTheme" class="form-control">
+          <optgroup label="Bright">
+
+    <option value="ace/theme/chrome" selected>
+
+        Chrome
+
+    </option>
+    <option value="ace/theme/clouds">
+
+        Clouds
+
+    </option>
+    <option value="ace/theme/crimson_editor">
+
+        Crimson Editor
+
+    </option>
+    <option value="ace/theme/dawn">
+
+        Dawn
+
+    </option>
+    <option value="ace/theme/dreamweaver">
+
+        Dreamweaver
+
+    </option>
+    <option value="ace/theme/eclipse">
+
+        Eclipse
+
+    </option>
+    <option value="ace/theme/github">
+
+        GitHub
+
+    </option>
+    <option value="ace/theme/solarized_light">
+
+        Solarized Light
+
+    </option>
+    <option value="ace/theme/textmate">
+
+        TextMate
+
+    </option>
+    <option value="ace/theme/tomorrow">
+
+        Tomorrow
+
+    </option>
+    <option value="ace/theme/xcode">
+
+        XCode
+
+    </option>
+    <option value="ace/theme/kuroir">
+
+        Kuroir
+
+    </option>
+    <option value="ace/theme/katzenmilch">
+
+        KatzenMilch
+
+    </option>
+
+</optgroup>
+<optgroup label="Dark">
+
+    <option value="ace/theme/ambiance">
+
+        Ambiance
+
+    </option>
+    <option value="ace/theme/chaos">
+
+        Chaos
+
+    </option>
+    <option value="ace/theme/clouds_midnight">
+
+        Clouds Midnight
+
+    </option>
+    <option value="ace/theme/cobalt">
+
+        Cobalt
+
+    </option>
+    <option value="ace/theme/idle_fingers">
+
+        idle Fingers
+
+    </option>
+    <option value="ace/theme/kr_theme">
+
+        krTheme
+
+    </option>
+    <option value="ace/theme/merbivore">
+
+        Merbivore
+
+    </option>
+    <option value="ace/theme/merbivore_soft">
+
+        Merbivore Soft
+
+    </option>
+    <option value="ace/theme/mono_industrial">
+
+        Mono Industrial
+
+    </option>
+    <option value="ace/theme/monokai">
+
+        Monokai
+
+    </option>
+    <option value="ace/theme/pastel_on_dark">
+
+        Pastel on dark
+
+    </option>
+    <option value="ace/theme/solarized_dark">
+
+        Solarized Dark
+
+    </option>
+    <option value="ace/theme/terminal">
+
+        Terminal
+
+    </option>
+    <option value="ace/theme/tomorrow_night">
+
+        Tomorrow Night
+
+    </option>
+    <option value="ace/theme/tomorrow_night_blue">
+
+        Tomorrow Night Blue
+
+    </option>
+    <option value="ace/theme/tomorrow_night_bright">
+
+        Tomorrow Night Bright
+
+    </option>
+    <option value="ace/theme/tomorrow_night_eighties">
+
+        Tomorrow Night 80s
+
+    </option>
+    <option value="ace/theme/twilight">
+
+        Twilight
+
+    </option>
+    <option value="ace/theme/vibrant_ink">
+
+        Vibrant Ink
+
+    </option>
+
+</optgroup>
+      </select>
+      <br>
+     </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

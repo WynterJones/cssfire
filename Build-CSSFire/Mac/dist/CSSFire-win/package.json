@@ -1,0 +1,22 @@
+{
+  "name": "CSSFire",
+  "description": "CSSFire",
+  "version": "0.1",
+  "main": "index.html",
+  "icon": "images/logo.png",
+  "window": {
+    "show": false,
+    "toolbar": false,
+    "frame": true,
+    "position": "center",
+    "resizable": false, 
+    "width": 775,
+    "height": 615,
+    "min_width": 775,
+    "min_height": 615,
+    "icon": "images/logo.png"
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

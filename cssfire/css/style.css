@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Domine:400,700);
+@import url(http://fonts.googleapis.com/css?family=Gochi+Hand);
+body {
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  background: #EEEEEE;
+  color: #333333;
+  text-shadow: 1px 1px 0 #fafafa;
+  padding-top: 100px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-family: "Domine", serif; }
+
+.container {
+  max-width: 900px; }
+
+.logo img {
+  width: 245px;
+  float: left;
+  margin-top: -40px;
+  margin-right: 40px; }
+
+.logo h1 {
+  padding-top: 50px;
+  font-size: 100px;
+  letter-spacing: -1px;
+  color: #222222;
+  margin: 0;
+  font-weight: 700;
+  font-family: "Domine", serif; }
+
+.logo h1 small {
+  font-size: 17px; }
+
+.btn-warning {
+  text-shadow: 1px 1px 0 #e38d13; }
+
+.logo h3 {
+  font-size: 40px;
+  color: #666666;
+  margin: 0;
+  padding-top: 20px;
+  font-weight: 400;
+  font-family: "Gochi Hand", serif; }
+
+.smallTag {
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.6; }
+
+.sidebar p {
+  padding: 0;
+  padding-left: 20px; }
+
+.helpInfo {
+  text-align: center;
+  padding: 10px; }
+
+#CSSFire {
+  width: 775px;
+  height: 625px;
+  margin-bottom: -5px; }
+
+.content {
+  font-size: 120%; }
+
+pre {
+  text-shadow: none; }
+
+button img {
+  margin-top: -4px; }
+
+.content h4 {
+  margin-bottom: 20px; }
+
+.footer {
+  border-top: 1px dashed #cccccc;
+  font-size: 11px;
+  margin-top: 60px;
+  clear: both;
+  color: #888888; }
+
+.footer p strong {
+  float: right;
+  font-weight: normal; }
+  .cssFire1_div { float: left }
+.cssFire2_iframe { border:none;overflow:hidden;height:21px;width: 150px }
+.cssFire3_div { width: 775px;margin: 0 auto }
+.cssFire4_div { width: 775px;margin: 0 auto }
+.cssFire5_iframe { width: 775px;margin-bottom: -5px;height: 530px }

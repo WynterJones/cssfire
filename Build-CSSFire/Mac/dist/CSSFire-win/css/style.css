@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Domine:400,700);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  background: url(images/bg.png) repeat-x #eeeeee;
+  -webkit-user-select: none;
+  -webkit-app-region: drag; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+.logo {
+  font-size: 28px;
+  letter-spacing: -1px;
+  color: #444444;
+  font-family: "Domine", serif; }
+
+.container {
+  max-width: 760px;
+  padding: 0; }
+
+.form-control {
+  margin: 5px 0; }
+
+.btn {
+  font-weight: bold;
+  font-size: 18px; }
+
+.loadFile {
+  font-size: 14px;
+  float: right; }
+
+*:focus {
+  outline: none !important;
+  outline-style: none !important;
+  box-shadow: none !important; }
+
+input {
+  -webkit-user-select: default;
+  -webkit-app-region: no-drag; }
+
+#editor {
+  width: 100%;
+  font-size: 14px;
+  height: 405px;
+  -webkit-user-select: auto;
+  -webkit-app-region: no-drag;
+  display: absolute;
+  border: 1px solid #cccccc;
+  margin: 5px 0;
+  border-radius: 5px; }
+
+#newHTMLEditor {
+  width: 100%;
+  font-size: 14px;
+  height: 250px;
+  -webkit-user-select: auto;
+  -webkit-app-region: no-drag;
+  display: absolute;
+  border: 1px solid #cccccc;
+  margin: 8px 0;
+  border-radius: 5px; }
+
+#cssClassesEditor {
+  width: 100%;
+  font-size: 14px;
+  height: 250px;
+  display: absolute;
+  -webkit-user-select: auto;
+  -webkit-app-region: no-drag;
+  border: 1px solid #cccccc;
+  margin: 8px 0;
+  border-radius: 5px; }
+
+#fire {
+  display: block;
+  opacity: 0;
+  margin-left: -600px;
+  position: absolute;
+  top: -50px;
+  left: 100px;
+  z-index: 9999; }
